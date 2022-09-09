@@ -9,7 +9,10 @@ router.get('/', async (req, res) => {
 		}
 
 		console.log(req.session.viewCount);
-		res.render('homepage', { viewCount: req.session.viewCount });
+		res.render('homepage', {
+			viewCount: req.session.viewCount,
+			loginStatus: req.session.loggedIn,
+		});
 	} catch (error) {
 		console.log(error);
 		res.status(500).json(error);
@@ -20,7 +23,7 @@ module.exports = router;
 
 router.get('/login', async (req, res) => {
 	try {
-		res.render('loginPage');
+		res.render('loginPage', { loginStatus: req.session.loggedIn });
 	} catch (error) {
 		res.status(500).json(error);
 	}

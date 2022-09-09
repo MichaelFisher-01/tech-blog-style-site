@@ -5,8 +5,19 @@
 		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 		<title>Document</title>
 	</head>
-	<nav><a href='/'>Home</a> <a href='/login'>Login</a></nav>
+	<nav><a href='/'>Home</a>
+		{{#if loginStatus}}
+			<button id='logout'>Logout</button>
+		{{else}}
+			<a href='/login'>Login</a>
+		{{/if}}
+	</nav>
 	<body>
 		{{{body}}}
+		<!-- Home Screen errors out if you load this script without a logout button -->
+		{{#if loginStatus}}
+			<script src='/js/logout.js'></script>
+		{{/if}}
 	</body>
+
 </html>
