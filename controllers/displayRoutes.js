@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 		const allPosts = await UserPosts.findAll();
 
 		const postArray = allPosts.map((posts) => posts.get({ plain: true }));
-		console.log(postArray);
+
 		res.render('homepage', {
 			postArray,
 			viewCount: req.session.viewCount,
