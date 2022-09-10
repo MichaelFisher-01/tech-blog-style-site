@@ -8,7 +8,7 @@ router.post('/create', async (req, res) => {
 
 		req.session.save(() => {
 			req.session.userName = accountInfo.userName;
-			req.session.loggedIn = true;
+			req.session.loginStatus = true;
 		});
 		res.status(200).json(accountInfo);
 	} catch (error) {
@@ -37,7 +37,7 @@ router.post('/login', async (req, res) => {
 
 		req.session.save(() => {
 			req.session.userName = accountInfo.userName;
-			req.session.loggedIn = true;
+			req.session.loginStatus = true;
 
 			res.json({ account: accountInfo, messsage: 'Succesfully logged in' });
 		});
@@ -47,7 +47,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
-	if (req.session.loggedIn) {
+	if (req.session.loginStatus) {
 		req.session.destroy(() => {
 			res.status(204).end();
 		});

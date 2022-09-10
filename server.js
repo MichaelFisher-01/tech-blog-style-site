@@ -28,7 +28,8 @@ app.use(session(sessOptions));
 
 // Pulling in the files for handlebars which will allow for page generation
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+const helpers = require('./utils/helpers');
+const hbs = exphbs.create({ helpers });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 

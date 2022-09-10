@@ -1,0 +1,15 @@
+<div>
+	<h2>Edit Post</h2>
+	<form id='editPost'>
+		<label for='editTitle'></label>
+		Title:
+		<input type='text' id='editTitle' value='{{currentPost.title}}' />
+		<label for='editContent'></label>
+		Content:
+		<input type='text' id='editContent' value='{{currentPost.postBody}}' />
+		<button type='submit' id='update' data-id={{currentPost.id}}>Update Post</button>
+	</form>
+	<button id='deletePost' data-id={{currentPost.id}}>DELETE POST</button>
+</div>
+
+<script src='/js/dashboard/editPost.js'></script>
