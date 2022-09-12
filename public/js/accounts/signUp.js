@@ -7,16 +7,16 @@ const createAccount = async (event) => {
 	const pass = document.querySelector('#createPass').value.trim();
 
 	if (name && pass) {
-		const createRoute = await fetch('/api/account/create', {
+		const createUser = await fetch('/api/account/create', {
 			method: 'POST',
 			body: JSON.stringify({ userName: name, password: pass }),
 			headers: { 'Content-Type': 'application/json' },
 		});
-
-		if (createRoute.ok) {
-			document.location.replace('/login');
+		console.log('=============================' + createUser);
+		if (createUser.ok) {
+			document.location.replace('/dashboard');
 		} else {
-			alert(createRoute.statusText);
+			alert(createUser.statusText);
 		}
 	}
 };

@@ -1,17 +1,16 @@
 <!-- Section to create a new account -->
-<div>
-	<h2>Create Account:</h2>
+<div class='card'>
+	<div class='titleBox'><h2>Create Account:</h2></div>
 	<form id='createForm'>
 		<label for='createName'></label>
-		Username:
+		<h3>-- Username --</h3>
 		<input type='text' id='createName' />
 		<label for='createPass'></label>
-		Password:
-		<input type='text' id='createPass' />
+		<h3>-- Password --</h3>
+		<input type='password' id='createPass' />
 		<button type='submit'>Sign Up</button>
 	</form>
+	<a class='swap' href='/login'>Login Instead!</a>
 </div>
-
-<a href='/login'>Log In Instead</a>
 
 <script src='./js/accounts/signUp.js'></script>

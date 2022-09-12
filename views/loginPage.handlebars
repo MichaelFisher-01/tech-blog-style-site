@@ -1,16 +1,16 @@
 <!-- Section for users to login -->
-<div>
-	<h2>Login</h2>
+<div class='card'>
+	<div class='titleBox'><h2>Login</h2></div>
 	<form id='loginForm'>
 		<label for='loginName'></label>
-		UserName:
+		<h3>-- UserName --</h3>
 		<input type='text' id='loginName' />
 		<label for='loginPass'></label>
-		Password:
-		<input type='text' id='loginPass' />
+		<h3>-- Password --</h3>
+		<input type='password' id='loginPass' />
 		<button type='submit'>Submit</button>
 	</form>
+	<a class='swap' href='/signUp'>Sign Up Instead!</a>
 </div>
-<a href='/signUp'>Sign Up Instead!</a>
 
 <script src='./js/accounts/login.js'></script>

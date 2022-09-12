@@ -4,13 +4,17 @@ const { Accounts } = require('../../models');
 router.post('/create', async (req, res) => {
 	try {
 		console.log('Generating User...');
-		const accountInfo = await Accounts.create(req.body);
+		const newAccount = await Accounts.create(req.body);
 
 		req.session.save(() => {
-			req.session.userName = accountInfo.userName;
+			req.session.userName = newAccount.userName;
 			req.session.loginStatus = true;
+
+			res.status(200).json({
+				account: newAccount,
+				message: 'Account Creationg Successful!',
+			});
 		});
-		res.status(200).json(accountInfo);
 	} catch (error) {
 		console.log(error);
 		res.status(400).json(error);
@@ -34,7 +38,7 @@ router.post('/login', async (req, res) => {
 			res.status(400).json({ message: 'Incorrect login credentials' });
 			return;
 		}
-		console.log(accountInfo.userName);
+
 		req.session.save(() => {
 			req.session.userName = accountInfo.userName;
 			req.session.loginStatus = true;

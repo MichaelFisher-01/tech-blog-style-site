@@ -16,7 +16,6 @@ router.get('/', async (req, res) => {
 
 		res.render('homepage', {
 			postArray,
-			viewCount: req.session.viewCount,
 			loginStatus: req.session.loginStatus,
 			currentUser: req.session.userName,
 		});

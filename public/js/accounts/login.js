@@ -12,7 +12,7 @@ const authLogin = async (event) => {
 			body: JSON.stringify({ userName, password }),
 			headers: { 'Content-Type': 'application/json' },
 		});
-
+		console.log(loginCheck);
 		if (loginCheck.ok) {
 			console.log('Login Succesful');
 			document.location.replace('/dashboard');
