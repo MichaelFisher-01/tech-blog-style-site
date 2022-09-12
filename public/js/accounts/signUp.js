@@ -12,7 +12,8 @@ const createAccount = async (event) => {
 			body: JSON.stringify({ userName: name, password: pass }),
 			headers: { 'Content-Type': 'application/json' },
 		});
-		console.log('=============================' + createUser);
+		console.log(createUser);
+		console.log(JSON.stringify(createUser));
 		if (createUser.ok) {
 			document.location.replace('/dashboard');
 		} else {

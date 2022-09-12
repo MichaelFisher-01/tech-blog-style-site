@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const { Accounts } = require('../../models');
-
+//A route for creating accounts.
 router.post('/create', async (req, res) => {
 	try {
-		console.log('Generating User...');
+		//waits for a new entry in the accounts table to be created before moving forward
 		const newAccount = await Accounts.create(req.body);
-
+		//Saves the values from the newAccount we created to our session so the info will be avialable on multiple webpages, then sends a resposne back.
 		req.session.save(() => {
 			req.session.userName = newAccount.userName;
 			req.session.loginStatus = true;
@@ -17,7 +17,7 @@ router.post('/create', async (req, res) => {
 		});
 	} catch (error) {
 		console.log(error);
-		res.status(400).json(error);
+		res.status(400).json({ problem: error.code, message: error.sqlMessage });
 	}
 });
 
