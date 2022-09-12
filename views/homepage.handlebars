@@ -2,14 +2,15 @@
 
 {{#if postArray.length}}
 	{{#each postArray as |post|}}
-		<br />
-		<div>
+		<div class='card'>
 			<div class='titleBox'>
-				<h2>{{post.title}}</h2>
-				<p>Posted by: {{post.creator}} on {{upDATE post.updatedAt}}</p>
+				<h2 class='cardTitle'>{{post.title}}</h2>
+				<p class='cardCreator'>Posted by:
+					{{post.creator}}
+					on
+					{{fixDate post.updatedAt}}</p>
 			</div>
 			<div class='contentBox'><p>{{post.postBody}}</p></div>
 		</div>
-		<br />
 	{{/each}}
 {{/if}}

@@ -34,7 +34,7 @@ router.post('/login', async (req, res) => {
 			res.status(400).json({ message: 'Incorrect login credentials' });
 			return;
 		}
-
+		console.log(accountInfo.userName);
 		req.session.save(() => {
 			req.session.userName = accountInfo.userName;
 			req.session.loginStatus = true;

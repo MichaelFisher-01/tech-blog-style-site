@@ -1,12 +1,12 @@
-<div>
-	<h2>Edit Post</h2>
+<div class='card'>
+	<div class='titleBox'><h2>Edit Post</h2></div>
 	<form id='editPost'>
 		<label for='editTitle'></label>
-		Title:
+		<h3>-- Title --</h3>
 		<input type='text' id='editTitle' value='{{currentPost.title}}' />
 		<label for='editContent'></label>
-		Content:
-		<input type='text' id='editContent' value='{{currentPost.postBody}}' />
+		<h3>-- Content --</h3>
+		<textarea id='editContent'>{{currentPost.postBody}}</textarea>
 		<button type='submit' id='update' data-id={{currentPost.id}}>Update Post</button>
 	</form>
 	<button id='deletePost' data-id={{currentPost.id}}>DELETE POST</button>

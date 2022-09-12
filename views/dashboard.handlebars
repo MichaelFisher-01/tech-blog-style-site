@@ -1,13 +1,10 @@
 <h2> Your Created Posts: </h2>
 {{#if posts.length}}
 	{{#each posts as |post|}}
-		<br />
-		<div class='card'>
-			<div class='title'><a href='/editPost/{{post.id}}'>{{post.title}}</a>
-			<p>posted by: {{post.creator}} on {{upDATE post.updatedAt}}</p>
-			</div>
-
-		<br />
+		<div class='dashboardPosts'>
+			<a href='/editPost/{{post.id}}'>{{post.title}}</a>
+			<p>{{noTime post.updatedAt}}</p>
+		</div>
 	{{/each}}
 {{/if}}
-<a href='/createPost'>+ NEW POST</a>
+<div class='newPost'><a href='/createPost'>+ NEW POST</a></div>

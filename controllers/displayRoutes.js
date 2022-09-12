@@ -48,10 +48,12 @@ router.get('/signUp', async (req, res) => {
 //Post Based Routes
 router.get('/dashboard', withAuth, async (req, res) => {
 	try {
+		console.log(req.session.userName);
 		const createdPosts = await UserPosts.findAll({
 			where: { creator: req.session.userName },
 		});
 		const posts = createdPosts.map((post) => post.get({ plain: true }));
+		console.log(posts);
 		res.render('dashboard', {
 			posts,
 			loginStatus: req.session.loginStatus,
@@ -80,6 +82,7 @@ router.get('/editPost/:id', withAuth, async (req, res) => {
 		res.render('editPost', {
 			currentPost,
 			loginStatus: req.session.loginStatus,
+			currentUser: req.session.userName,
 		});
 	} catch (error) {
 		console.log(error);
