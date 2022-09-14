@@ -1,4 +1,5 @@
 module.exports = {
+	//A reusable function to adjust the dates stored in the datbase to a readable format.
 	fixDate: (date) => {
 		const options = {
 			year: 'numeric',
@@ -9,7 +10,7 @@ module.exports = {
 		};
 		return new Date(date).toLocaleDateString('us-en', options);
 	},
-
+	//Adjusts the date to a readable format without the time
 	noTime: (date) => {
 		const options = {
 			year: 'numeric',

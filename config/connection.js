@@ -1,4 +1,7 @@
+//Setup to connect to the database we create.
+//Pulling in sequelize files
 const Sequelize = require('sequelize');
+//Pulling in dotenv files so we can pull the names needed from a .env file.
 require('dotenv').config();
 
 let sequelize;

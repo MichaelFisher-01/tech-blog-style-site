@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 
 class Accounts extends Model {
+	//A function attached to all our accounts that will encrypt the incoming password and check it against the password in the database.
 	validatePassword(password) {
 		return bcrypt.compareSync(password, this.password);
 	}
