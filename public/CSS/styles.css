@@ -197,6 +197,14 @@ h3 {
 	padding-top: 20px;
 }
 
+.commentBox {
+	display: flex;
+	height: 15vh;
+	max-height: 125px;
+	margin: 0px 25px;
+	padding-top: 20px;
+}
+
 .dashboardPosts {
 	display: flex;
 	flex-wrap: wrap;

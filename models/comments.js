@@ -15,12 +15,17 @@ Comments.init(
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
+		commentCreator: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
 		post_id: {
 			type: DataTypes.INTEGER,
 			references: {
 				model: 'userPosts',
 				key: 'id',
 			},
+			allowNull: false,
 		},
 	},
 	{

@@ -1,0 +1,27 @@
+<!-- Displaying the post the user clicked on-->
+<div class='card'>
+    <div class='titleBox'>
+        <h2 class='cardTitle'>{{postData.title}}</h2>
+        <p class='cardCreator'>Posted by:
+            {{postData.creator}}
+            on
+            {{fixDate postData.updatedAt}}</p>
+    </div>
+    <div class='contentBox'><p>{{postData.postBody}}</p></div>
+</div>
+<!-- If the user is logged in then allow them to make a comment-->
+{{#if loginStatus}}
+    <div class="card">
+        <div class="titleBox">
+            <h2>Leave a comment!:</h2></div>
+            <form id="createComment">
+                <textarea id="newComment" data-id="{{postData.id}}"></textarea>
+                <button type="'submit" id="submitComment" data-id="{{currentUser}}">Submit</button></buttn>
+            </form>
+        </div>
+    </div>
+{{/if}}
+<br />
+{{> comments}}
+<br />
+<script src="/js/comments.js"></script>

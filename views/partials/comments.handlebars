@@ -1,0 +1,14 @@
+{{#if allComments.length}}
+	{{#each allComments as |comment|}}
+		<br />
+		<div class='card'>
+			<div class='titleBox'>
+				<h2 class='cardTitle'>{{comment.commentCreator}} commented...</h2>
+				<p class='cardCreator'>
+					{{fixDate comment.createdAt}}</p>
+			</div>
+			<div class='commentBox'><p>{{comment.comment}}</p></div>
+		</div>
+		<br />
+	{{/each}}
+{{/if}}

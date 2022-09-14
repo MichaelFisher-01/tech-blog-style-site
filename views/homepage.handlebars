@@ -2,7 +2,9 @@
 	{{#each postArray as |post|}}
 		<div class='card'>
 			<div class='titleBox'>
-				<h2 class='cardTitle'>{{post.title}}</h2>
+				<h2 class='cardTitle'><a
+						href='/comments/{{post.id}}'
+					>{{post.title}}</a></h2>
 				<p class='cardCreator'>Posted by:
 					{{post.creator}}
 					on
