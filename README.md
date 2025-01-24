@@ -24,7 +24,7 @@ Clone the repository down to your system. Run the npm i command to install depen
 If you wish to contribute to this repo please reach out to the information in the questions section.
 
 ## Website
-https://desolate-sierra-90726.herokuapp.com/
+https://tech-blog-style-site-986faa52fb75.herokuapp.com/
 
 ## Questions
 If you have questions you can contact me at:
