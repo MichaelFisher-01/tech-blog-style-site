@@ -17,7 +17,7 @@ Run the following command(s) to install the dependncies: npm i
 
 ## Usage
 
-Clone the repository down to your system. Run the npm i command to install dependencies. Once complete navigate to the DB folder. Log into a mysql using the mysql -u "username" -p "password". Then create the database by running "SOURCE techBlog_db". Once that is complete you can use the command "EXIT" to leave the mysql instance. Navigate back to the main folder. You will then need to create a .env file and fill in the information for your mysql instance and the database name. (techBlog_db).There is a node mon script called "devStart" you can trigger by entereing npm run devStart into your command line. The site will default to port 3001 if no other option is provided. 
+Clone the repository down to your system. Run the npm i command to install dependencies. Once complete navigate to the DB folder. Log into a mysql using the mysql -u "username" -p "password". Then create the database by running "SOURCE schema.sql". Once that is complete you can use the command "EXIT" to leave the mysql instance. Navigate back to the main folder. You will then need to create a .env file and fill in the information for your mysql instance and the database name, (techBlog_db) include your username and password as well as secret.There is a node mon script called "devStart" you can trigger by entereing npm run devStart into your command line. The site will default to port 3001 if no other option is provided. 
 
 ## Contributions
 
